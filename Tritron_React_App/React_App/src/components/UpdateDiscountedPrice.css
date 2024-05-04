@@ -1,0 +1,43 @@
+
+div {
+    margin: 20px; /* Adjust margin as needed */
+  }
+  
+  /* Style for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for the form elements */
+  label, select, input, button {
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the button */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Adjust styles based on your design preferences */
+  

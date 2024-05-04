@@ -1,0 +1,21 @@
+/* Navbar */
+.navbar {
+    width: 250px; /* Set the width of the side navbar */
+  }
+  
+  /* Navbar links */
+  .navbar-nav .nav-link {
+    padding: 10px 15px; /* Add padding to navbar links */
+    color: #fff; /* Set text color */
+  }
+  
+  /* Navbar links on hover */
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+  }
+  
+  /* Toggler icon color */
+  .navbar-toggler-icon {
+    color: #fff; /* Set toggler icon color */
+  }
+  

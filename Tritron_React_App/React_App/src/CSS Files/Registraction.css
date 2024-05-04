@@ -1,0 +1,30 @@
+.form-row {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .registraction-container
+  {
+    width: 1000px;
+    background-color: antiquewhite;
+    margin-left: 320px;
+  }
+
+  .btn
+  {
+    width: 100px;
+    height: 40px;
+  }
+  .btn-1
+  {
+    width: 100px;
+    height: 40px;
+    margin-top: 50px;
+  }
+
+  

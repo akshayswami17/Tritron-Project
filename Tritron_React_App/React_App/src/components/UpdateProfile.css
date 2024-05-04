@@ -1,0 +1,44 @@
+/* UpdateProfile.css */
+.updateprofile {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add your custom styles below */
+
+/* Example: Add some spacing between form elements */
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+/* Example: Customize form label styles */
+.form-label {
+  font-weight: bold;
+}
+
+/* Example: Customize form input styles */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Example: Customize submit button styles */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}

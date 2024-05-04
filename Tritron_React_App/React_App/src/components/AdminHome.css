@@ -1,0 +1,54 @@
+/* Navbar */
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .nav-item {
+    margin-right: 10px;
+  }
+  
+  .nav-Link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nav-Link:hover {
+    color: #007bff;
+  }
+  
+  /* Main Content */
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      flex-direction: column;
+    }
+    
+    .nav-item {
+      margin: 5px 0;
+    }
+  }
+
+  h1 {
+    background-color: rgb(226, 163, 163); /* Replace 'yourColor' with the desired background color */
+    color: #fff; /* Set text color to white, or any color that contrasts well with the background */
+    padding: 20px; /* Add padding for better visual appeal */
+  }
+  
+  
