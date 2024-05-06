@@ -1,5 +1,4 @@
 import { useReducer, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../CSS Files/FeedbackForm.css';
 
 export default function FeedbackForm() {
@@ -22,73 +21,48 @@ export default function FeedbackForm() {
 
     const [feedback, dispatch] = useReducer(reducer, init);
     const [errorMsgs, setErrorMsgs] = useState(init);
-    const navigate = useNavigate();
 
-    const sendFeedback = (e) => {
+    const sendData = (e) => {
         e.preventDefault();
         const requiredFields = ['username', 'ratings', 'comments'];
         const newErrorMsgs = { ...errorMsgs };
-    
+
         for (const field of requiredFields) {
             newErrorMsgs[field] = "";
         }
-    
+
         for (const field of requiredFields) {
             if (!feedback[field]) {
                 newErrorMsgs[field] = "This field is required";
             }
         }
-    
-        // Check if any error messages exist
+
+        setErrorMsgs(newErrorMsgs); // Update error messages
+
         for (const field of requiredFields) {
             if (newErrorMsgs[field]) {
-                setErrorMsgs(newErrorMsgs);
-                return;
+                return; // Exit if any error message is present
             }
         }
-    
-        // Convert ratings to an integer
-        const ratingsInt = parseInt(feedback.ratings);
-        if (isNaN(ratingsInt)) {
-            console.error("Invalid rating value:", feedback.ratings);
-            return;
-        }
-    
-        // Send feedback data to the server
-        const feedbackData = {
-            username: feedback.username,
-            ratings: ratingsInt,
-            comments: feedback.comments
-        };
-    
-        console.log("Feedback data:", feedbackData); // Log the feedback data
-    
-        const reqOptions = {
+
+        // Send feedback data to backend
+        fetch("http://localhost:8080/feedbackform", {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(feedbackData) // Stringify the feedback data here
-        };
-    
-        fetch("http://localhost:8080/feedbackform", reqOptions)
-            .then(resp => {
-                if (resp.ok) {
-                    console.log(resp.status);
-                    return resp.json();
-                } else {
-                    throw new Error("Server error");
-                }
-            })
-            .then(data => {
-                alert("Feedback submitted successfully!");
-                navigate('/');
-            })
-            .catch(error => {
-                console.error("Error submitting feedback:", error);
-            });
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(feedback), // Pass the feedback object directly
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert("Feedback submitted successfully!");
+            dispatch({ type: 'reset' }); // Clear form
+        })
+        .catch((error) => {
+            console.error('Error submitting feedback:', error);
+        });
     }
-    
-    
-    
 
     return (
         <div className="feedback-container">
@@ -111,11 +85,9 @@ export default function FeedbackForm() {
                         required
                     >
                         <option value="">Select Rating</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="Average">Average</option>
+                        <option value="Good">Good</option>
+                        <option value="Excellent">Excellent</option>
                     </select>
                     <div className="error-msg" style={{ color: 'red' }}>{errorMsgs.ratings}</div>
                 </div>
@@ -130,9 +102,9 @@ export default function FeedbackForm() {
                 </div>
                 <div className="form-row">
                     <button type="reset" className="btn btn-danger mb-3" onClick={() => dispatch({ type: 'reset' })}>Clear</button>
-                    <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendFeedback(e)}>Submit</button>
+                    <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
                 </div>
             </form>
         </div>
-    );
+    )
 }
