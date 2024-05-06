@@ -1,243 +1,94 @@
-// // import React, { useState } from 'react';
+import { useReducer, useState } from 'react';
+import '../CSS Files/FeedbackForm.css';
 
-// // const FeedbackForm = () => {
-// //   const [formData, setFormData] = useState({
-// //     name: '',
-// //     email: '',
-// //     feedback: '',
-// //   });
+export default function FeedbackForm() {
+    const init = {
+        username: "",
+        ratings: "",
+        comments: ""
+    }
 
-// //   const handleChange = (e) => {
-// //     const { name, value } = e.target;
-// //     setFormData({
-// //       ...formData,
-// //       [name]: value,
-// //     });
-// //   };
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case 'update':
+                return { ...state, [action.fld]: action.val }
+            case 'reset':
+                return init;
+            default:
+                return state;
+        }
+    }
 
-// //   const handleSubmit = (e) => {
-// //     e.preventDefault();
+    const [feedback, dispatch] = useReducer(reducer, init);
+    const [errorMsgs, setErrorMsgs] = useState(init);
 
-// //     fetch('http://localhost:8080/submitFeedback', {
-// //       method: 'POST',
-// //       headers: {
-// //         'Content-Type': 'application/json',
-// //       },
-// //       body: JSON.stringify(formData),
-// //     })
-// //       .then(response => response.json())
-// //       .then(data => {
-// //         console.log('Feedback submitted successfully:', data);
-// //         // You can add further logic here, such as showing a success message.
-// //       })
-// //       .catch(error => console.error('Error submitting feedback:', error));
-// //   };
+    const sendData = (e) => {
+        e.preventDefault();
+        const requiredFields = ['username', 'ratings', 'comments'];
+        const newErrorMsgs = { ...errorMsgs };
 
-// //   return (
-// //     <div>
-// //       <h2>Feedback Form</h2>
-// //       <form onSubmit={handleSubmit}>
-// //         <div>
-// //           <label htmlFor="name">Name:</label>
-// //           <input
-// //             type="text"
-// //             id="name"
-// //             name="name"
-// //             value={formData.name}
-// //             onChange={handleChange}
-// //             required
-// //           />
-// //         </div>
-// //         <div>
-// //           <label htmlFor="email">Email:</label>
-// //           <input
-// //             type="email"
-// //             id="email"
-// //             name="email"
-// //             value={formData.email}
-// //             onChange={handleChange}
-// //             required
-// //           />
-// //         </div>
-// //         <div>
-// //           <label htmlFor="feedback">Feedback:</label>
-// //           <textarea
-// //             id="feedback"
-// //             name="feedback"
-// //             value={formData.feedback}
-// //             onChange={handleChange}
-// //             required
-// //           />
-// //         </div>
-// //         <button type="submit">Submit Feedback</button>
-// //       </form>
-// //     </div>
-// //   );
-// // };
+        for (const field of requiredFields) {
+            newErrorMsgs[field] = "";
+        }
 
-// // export default FeedbackForm;
+        for (const field of requiredFields) {
+            if (!feedback[field]) {
+                newErrorMsgs[field] = "This field is required";
+            }
+        }
 
+        // Here you can send the feedback data to your backend or handle it as required
+        console.log("Feedback data:", feedback);
+        // Clear the form after submission
+        dispatch({ type: 'reset' });
+    }
 
-
-// // FeedbackForm.css
-// /* Add your custom styles here */
-
-// // FeedbackForm.js
-// import React, { useState } from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-// import './FeedbackForm.css'; // Import custom CSS
-
-// const FeedbackForm = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     feedback: '',
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value,
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     fetch('http://localhost:8080/submitFeedback', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(formData),
-//     })
-//       .then(response => response.json())
-//       .then(data => {
-//         console.log('Feedback submitted successfully:', data);
-//         // You can add further logic here, such as showing a success message.
-//       })
-//       .catch(error => console.error('Error submitting feedback:', error));
-//   };
-
-//   return (
-//     <div className="container mt-5">
-//       <h2 className="mb-4">Feedback Form</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div className="mb-3">
-//           <label htmlFor="name" className="form-label">Name:</label>
-//           <input
-//             type="text"
-//             id="name"
-//             name="name"
-//             value={formData.name}
-//             onChange={handleChange}
-//             className="form-control"
-//             required
-//           />
-//         </div>
-//         <div className="mb-3">
-//           <label htmlFor="email" className="form-label">Email:</label>
-//           <input
-//             type="email"
-//             id="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//             className="form-control"
-//             required
-//           />
-//         </div>
-//         <div className="mb-3">
-//           <label htmlFor="feedback" className="form-label">Feedback:</label>
-//           <textarea
-//             id="feedback"
-//             name="feedback"
-//             value={formData.feedback}
-//             onChange={handleChange}
-//             className="form-control"
-//             required
-//           />
-//         </div>
-//         <button type="submit" className="btn btn-primary">Submit Feedback</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default FeedbackForm;
-
-
-
-
-// FeedbackForm.js
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './FeedbackForm.css'; // Import custom CSS
-
-const FeedbackForm = () => {
-  const [formData, setFormData] = useState({
-    ratings: '',
-    comments: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    fetch('http://localhost:8080/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Feedback submitted successfully:', data);
-        // You can add further logic here, such as showing a success message.
-      })
-      .catch(error => console.error('Error submitting feedback:', error));
-  };
-
-  return (
-    <div className="container mt-5">
-      <h2 className="mb-4">Feedback Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="ratings" className="form-label">Ratings:</label>
-          <input
-            type="number"
-            id="ratings"
-            name="ratings"
-            value={formData.ratings}
-            onChange={handleChange}
-            className="form-control"
-            required
-          />
+    return (
+        <div className="feedback-container">
+            <h1 className='feedback-heading'>Feedback Form</h1>
+            <form>
+                <div className="form-group-fb">
+                    <label htmlFor="username" className="form-label">Username:</label>
+                    <input type="text" className="form-control" id="username" name="username"
+                        value={feedback.username}
+                        onChange={(e) => dispatch({ type: 'update', fld: 'username', val: e.target.value })}
+                        required
+                    />
+                    <div className="error-msg" style={{ color: 'red' }}>{errorMsgs.username}</div>
+                </div>
+                <div className="form-group-fb">
+                    <label htmlFor="ratings" className="form-label">Ratings:</label>
+                    <select className="form-control" id="ratings" name="ratings"
+                        value={feedback.ratings}
+                        onChange={(e) => dispatch({ type: 'update', fld: 'ratings', val: e.target.value })}
+                        required
+                    >
+                        <option value="">Select Rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <div className="error-msg" style={{ color: 'red' }}>{errorMsgs.ratings}</div>
+                </div>
+                <div className="form-group-fb">
+                    <label htmlFor="comments" className="form-label">Comments:</label>
+                    <textarea className="form-control" id="comments" name="comments"
+                        value={feedback.comments}
+                        onChange={(e) => dispatch({ type: 'update', fld: 'comments', val: e.target.value })}
+                        required
+                    />
+                    <div className="error-msg" style={{ color: 'red' }}>{errorMsgs.comments}</div>
+                </div>
+                <div className="form-row">
+                
+                    
+                    <button type="reset" className="btn btn-danger mb-3" onClick={() => dispatch({ type: 'reset' })}>Clear</button>
+                    <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
+                
+                </div>
+            </form>
         </div>
-        <div className="mb-3">
-          <label htmlFor="comments" className="form-label">Comments:</label>
-          <textarea
-            id="comments"
-            name="comments"
-            value={formData.comments}
-            onChange={handleChange}
-            className="form-control"
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">Submit Feedback</button>
-      </form>
-    </div>
-  );
-};
-
-export default FeedbackForm;
+    )
+}

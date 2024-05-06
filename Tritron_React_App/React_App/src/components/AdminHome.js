@@ -1,15 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
-import "./AdminHome.css";
+import "../CSS Files/AdminHome.css";
 import logo from "./Images/logo1.jpg";
 
 export default function AdminHome() {
     return (
-        <div>
+        <div  className="admin-home">
             <nav className="navbar navbar-expand-sm bg-dark mb-3">
                 <div className="container-fluid">
                 <li className="navbar-brand">
                     <Link to="/">
-                        <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+                        <img src={logo} alt="Logo" style={{ width: '100px', height: 'auto'  }} />
                     </Link>
                 </li>
                     <ul className="navbar-nav">
@@ -37,7 +37,7 @@ export default function AdminHome() {
                 </div>
             </nav>
 
-            <h1>Admin Home</h1>
+            {/* <h1>Admin Home</h1> */}
             <Outlet />
         </div>
     );

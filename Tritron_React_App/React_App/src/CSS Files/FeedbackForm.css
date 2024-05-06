@@ -1,0 +1,40 @@
+.feedback-container {
+  width: 600px;
+  height: 550px;
+  margin-top: 50px;
+  margin-left: 340px;
+  /* margin-right: 300px; */
+  background-color: rgb(119, 194, 234);
+  border: 2px solid rgb(57, 4, 250);
+  border-radius: 10px;
+}
+
+.feedback-container h1 {
+  color: rgb(6, 6, 248);
+  margin-top: 30px; /* Adjust margin as needed */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.form-group-fb {
+  flex: 1;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.btn
+  {
+    width: 100px;
+    height: 40px;
+    margin-left: 100px;
+    margin-right: 100px
+  }
+
+  .btn-primary
+  {
+    margin-left: 50px;
+  }

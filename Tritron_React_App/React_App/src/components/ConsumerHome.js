@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import "./AdminHome.css";
+import "../CSS Files/AdminHome.css";
 import logo from "./Images/logo1.jpg";
 export default function ConsumerHome() {
 
