@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const FeedbackComponent = () => {
+const FeedbackData = () => {
   const [feedbackData, setFeedbackData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/getAllFeedbacks') // Replace with your Spring Boot app URL
+    fetch("http://localhost:8080/getAllFeedbacks") // Replace with your Spring Boot app URL
       .then(response => response.json())
       .then(data => setFeedbackData(data))
       .catch(error => console.error('Error fetching feedback data:', error));
@@ -16,21 +16,19 @@ const FeedbackComponent = () => {
       <table className="table table-striped table-hover">
         <thead>
           <tr>
+            <th>Feedback Id</th>
             <th>User</th>
-            <th>Product Name</th>
-            <th></th>
             <th>Rating</th>
             <th>Comment</th>
           </tr>
         </thead>
         <tbody>
           {feedbackData.map(feedback => (
-            <tr key={feedback.feedbackId}>
-              <td>{feedback.user.username}</td>
-              <td>{feedback.product.model.model_Name}</td>
-              <td>{feedback.product.seller.shop_name}</td>
-              <td>{feedback.rating}</td>
-              <td>{feedback.comment}</td>
+            <tr key={feedback.feedback_id}>
+              <td>{feedback.feedback_id}</td>
+              <td>{feedback.username}</td>
+              <td>{feedback.ratings}</td>
+              <td>{feedback.comments}</td>
             </tr>
           ))}
         </tbody>
@@ -39,4 +37,4 @@ const FeedbackComponent = () => {
   );
 };
 
-export default FeedbackComponent;
+export default FeedbackData;
