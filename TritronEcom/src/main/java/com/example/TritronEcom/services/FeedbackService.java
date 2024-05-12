@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.TritronEcom.entities.Feedback;
-import com.example.TritronEcom.entities.Product;
 import com.example.TritronEcom.repositories.FeedbackRepository;
 
 @Service

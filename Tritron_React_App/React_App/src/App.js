@@ -31,6 +31,7 @@ import FeedbackData from './components/FeedbackData';
 import TrackOrder from './components/TrackOrders'
 import ViewOrders from './components/ViewOrders'
 import FeedbackForm from './components/FeedbackForm';
+import ViewUsers from './components/ViewUsers';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -56,6 +57,7 @@ function App() {
           <Route path="addModel" element={<AddModel />} />
           <Route path="approveSeller" element={<ApproveSeller2 />} />
           <Route path="viewFeedback" element={<FeedbackData />} />
+          <Route path="ViewUsers" element={<ViewUsers />} />
           
         </Route>
 

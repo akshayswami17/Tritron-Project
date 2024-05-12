@@ -22,6 +22,9 @@ export default function AdminHome() {
                             <Link to="manageUsers" className="nav-link px-3" style={{ color: 'white' }}>Manage Users</Link> 
                         </li>
                         <li className="nav-item">
+                            <Link to="ViewUsers" className="nav-link px-3" style={{ color: 'white' }}>View Users</Link> 
+                        </li>
+                        <li className="nav-item">
                             <Link to="viewFeedback" className="nav-link px-3" style={{ color: 'white' }}>View Feedback</Link> 
                         </li>
                         <li className="nav-item">

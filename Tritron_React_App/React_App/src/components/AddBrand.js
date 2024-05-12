@@ -1,52 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './AddBrand.css';
+import { useReducer, useState } from 'react';
+import '../CSS Files/AddBrand.css';
 
-const AddBrand = () => {
-  const [brands, setBrands] = useState([]);
-  const [brandName, setBrandName] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+export default function BrandForm() {
+    const init = {
+        brandName: ""
+    }
 
-  useEffect(() => {
-    fetch('http://localhost:8080/getAllBrands')
-      .then(response => response.json())
-      .then(data => setBrands(data))
-      .catch(error => console.error('Error fetching brands:', error));
-  }, []);
-  
-  const handleSave = () => {
-    fetch('http://localhost:8080/addBrand', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify({ brand_name: brandName }), 
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Brand saved successfully:', data);
-        setSuccessMessage('Brand added successfully!');
-      })
-      .catch(error => {
-        console.error('Error saving brand:', error);
-      });
-  };
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case 'update':
+                return { ...state, [action.field]: action.value }
+            case 'reset':
+                return init;
+            default:
+                return state;
+        }
+    }
 
-  return (
-    <div className="add-brand-container">
-      <h2>Add Brand</h2>
-      <input
-        type="text"
-        value={brandName}
-        onChange={e => setBrandName(e.target.value)}
-        placeholder="Enter brand name"
-        className="form-control add-brand-input"
-      />
-      <button onClick={handleSave} className="btn btn-primary">Save</button>
-      {successMessage && <p className="text-success">{successMessage}</p>}
-    </div>
-  );
-};
+    const [brand, dispatch] = useReducer(reducer, init);
+    const [errorMsg, setErrorMsg] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
-export default AddBrand;
+    const sendData = (e) => {
+        e.preventDefault();
+
+        // Validate brand name
+        if (!brand.brandName) {
+            setErrorMsg("Brand name is required");
+            return;
+        }
+
+        // Send brand data to backend
+        fetch("http://localhost:8080/addBrand", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ brandName: brand.brandName }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            setSuccessMessage("Brand submitted successfully!");
+            dispatch({ type: 'reset' }); // Clear form
+        })
+        .catch((error) => {
+            console.error('Error submitting brand:', error);
+        });
+    }
+
+    return (
+        <div className="brand-container">
+            <h1 className='brand-heading'>Add Brand</h1>
+            <form>
+                <div className="form-group-brand">
+                    <label htmlFor="brandName" className="form-label">Brand Name:</label>
+                    <input type="text" className="form-control" id="brandName" name="brandName"
+                        value={brand.brandName}
+                        onChange={(e) => dispatch({ type: 'update', field: 'brandName', value: e.target.value })}
+                        required
+                    />
+                    <div className="error-msg" style={{ color: 'red' }}>{errorMsg}</div>
+                </div>
+                <div className="form-row">
+                    <button type="reset" className="btn btn-danger mb-3" onClick={() => dispatch({ type: 'reset' })}>Clear</button>
+                    <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
+                    {successMessage && <p className="text-success">{successMessage}</p>}
+                </div>
+            </form>
+        </div>
+    )
+}

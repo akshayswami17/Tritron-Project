@@ -21,6 +21,7 @@ export default function FeedbackForm() {
 
     const [feedback, dispatch] = useReducer(reducer, init);
     const [errorMsgs, setErrorMsgs] = useState(init);
+    const [successMessage, setSuccessMessage] = useState('');
 
     const sendData = (e) => {
         e.preventDefault();
@@ -56,7 +57,7 @@ export default function FeedbackForm() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            alert("Feedback submitted successfully!");
+            setSuccessMessage("Feedback submitted successfully!");
             dispatch({ type: 'reset' }); // Clear form
         })
         .catch((error) => {
@@ -103,6 +104,7 @@ export default function FeedbackForm() {
                 <div className="form-row">
                     <button type="reset" className="btn btn-danger mb-3" onClick={() => dispatch({ type: 'reset' })}>Clear</button>
                     <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
+                    {successMessage && <p className="text-success">{successMessage}</p>}
                 </div>
             </form>
         </div>

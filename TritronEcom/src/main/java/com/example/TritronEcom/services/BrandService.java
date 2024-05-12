@@ -1,16 +1,12 @@
 package com.example.TritronEcom.services;
 
-
-
 import com.example.TritronEcom.entities.Brand;
 import com.example.TritronEcom.repositories.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-//public Brand addBrand(Brand brand) {
-//return brandRepository.save(brand);
-//}
+
 //
 //public Brand updateBrand(Brand brand) {
 //return brandRepository.save(brand);
@@ -36,8 +32,8 @@ public class BrandService {
         return brandRepository.findById(id).orElse(null);
     }
     
-//	  public Brand addBrand(Brand brand) {
-//	  return brandRepository.save(brand);
-//	  }
+    public Brand addBrand(Brand brand) {
+    	return brandRepository.save(brand);
+    	}
 
 }

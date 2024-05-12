@@ -1,10 +1,12 @@
 package com.example.TritronEcom.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.TritronEcom.entities.Product;
 import com.example.TritronEcom.entities.User;
 import com.example.TritronEcom.repositories.UserRepository;
 
@@ -35,5 +37,9 @@ public class UserService {
 	{
 		return urepo.save(u);
 	}
+	
+	 public List<User> getAllUsers() {
+	        return urepo.findAll();
+	    }
 	
 }

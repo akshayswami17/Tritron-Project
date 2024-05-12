@@ -1,53 +1,57 @@
 package com.example.TritronEcom.entities;
 
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
+//@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Entity
 @Table(name = "brand")
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer brand_Id;
+    @Column(name="brand_id")
+    private int brand_id;
 
-    @Column(nullable = false, length = 255)
-    private String brand_Name;
+    @Column(name="brand_name")
+    private String brand_name;
+
+	public Brand(String brand_name) {
+		super();
+		this.brand_name = brand_name;
+	}
 
 	public Brand() {
 		super();
 	}
 
-	public Brand(String brand_Name) {
+	public Brand(int brand_id, String brand_name) {
 		super();
-		this.brand_Name = brand_Name;
+		this.brand_id = brand_id;
+		this.brand_name = brand_name;
 	}
 
-	public Integer getBrand_Id() {
-		return brand_Id;
+	public int getBrand_id() {
+		return brand_id;
 	}
 
-	public void setBrand_Id(Integer brand_Id) {
-		this.brand_Id = brand_Id;
+	public void setBrand_id(int brand_id) {
+		this.brand_id = brand_id;
 	}
 
-	public String getBrand_Name() {
-		return brand_Name;
+	public String getBrand_name() {
+		return brand_name;
 	}
 
-	public void setBrand_Name(String brand_Name) {
-		this.brand_Name = brand_Name;
+	public void setBrand_name(String brand_name) {
+		this.brand_name = brand_name;
 	}
-	
-    
+
 
 
 }
