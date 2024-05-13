@@ -32,6 +32,8 @@ import TrackOrder from './components/TrackOrders'
 import ViewOrders from './components/ViewOrders'
 import FeedbackForm from './components/FeedbackForm';
 import ViewUsers from './components/ViewUsers';
+import SellersData from './components/SellersData';
+import ConsumerData from './components/ConsumerData';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -49,6 +51,7 @@ function App() {
         <Route path='/sellerreg' element={<SellerReg />} />
         <Route path='/consumerreg' element={<ConsumerReg />} />
         
+        
         <Route path="/logout" element={<LoginComp />} />
         
 
@@ -58,6 +61,8 @@ function App() {
           <Route path="approveSeller" element={<ApproveSeller2 />} />
           <Route path="viewFeedback" element={<FeedbackData />} />
           <Route path="ViewUsers" element={<ViewUsers />} />
+          <Route path="Viewsellers" element={<SellersData />} />
+          <Route path="ViewConsumer" element={<ConsumerData />} />
           
         </Route>
 

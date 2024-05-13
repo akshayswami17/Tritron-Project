@@ -25,6 +25,12 @@ export default function AdminHome() {
                             <Link to="ViewUsers" className="nav-link px-3" style={{ color: 'white' }}>View Users</Link> 
                         </li>
                         <li className="nav-item">
+                            <Link to="Viewsellers" className="nav-link px-3" style={{ color: 'white' }}>View Sellers</Link> 
+                        </li>
+                        <li className="nav-item">
+                            <Link to="ViewConsumer" className="nav-link px-3" style={{ color: 'white' }}>View Consumer</Link> 
+                        </li>
+                        <li className="nav-item">
                             <Link to="viewFeedback" className="nav-link px-3" style={{ color: 'white' }}>View Feedback</Link> 
                         </li>
                         <li className="nav-item">

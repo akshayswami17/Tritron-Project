@@ -4,7 +4,7 @@ const OrderList = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/getAllOrders')
+    fetch("http://localhost:8080/getAllOrders")
       .then(response => response.json())
       .then(data => setOrders(data))
       .catch(error => console.error('Error fetching orders:', error));
@@ -23,15 +23,16 @@ const OrderList = () => {
           </tr>
         </thead>
         <tbody>
-          {orders.map(order => (
-            <tr key={order.order_Id}>
-              <td>{order.order_Id}</td>
-              <td>{order.consumer.first_name}</td>
-              <td>{order.product.model.model_Name}</td>
-              <td>{order.dateOfOrder}</td>
-            </tr>
-          ))}
-        </tbody>
+  {orders.map(order => (
+    <tr key={order.order_id}>
+      <td>{order.order_id}</td>
+      <td>{order.consumer ? order.consumer.first_name : 'Unknown'}</td>
+      <td>{order.product ? order.product.model.model_Name : 'Unknown'}</td>
+      <td>{order.date_of_order}</td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   );

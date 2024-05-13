@@ -31,6 +31,7 @@ public class User {
 	
 	@ManyToOne
     @JoinColumn(name = "role_id")
+	@JsonIgnoreProperties("users")
 	Role role;
 	
 	@Column
