@@ -63,6 +63,7 @@ export default function LoginComp() {
               break;
             case 3:
               navigate("/seller_home");
+              
               break;
             default:
               break;

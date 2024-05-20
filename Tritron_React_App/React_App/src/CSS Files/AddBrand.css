@@ -1,8 +1,12 @@
 /* AddBrand.css */
 
 .add-brand-container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
+    background-color: rgb(243, 245, 247);
+    border : 0.5px solid rgb(110, 98, 98);
+    border-radius: 5px;
+    margin-top: 100px;
   }
   
   .add-brand-input {
@@ -17,6 +21,7 @@
     margin-left: 350px;
     border: 1px solid black;
     border-radius: 25px;
+    margin-top: 50px;
   }
 
   .brand-heading
@@ -24,4 +29,30 @@
     
     color: blueviolet;
     margin-top: 50px;
+  }
+
+  .form-row-brand {
+    display: flex;
+    justify-content: space-between; 
+  }
+
+  .btn
+  {
+    width: 100px;
+    height: 40px;
+  }
+  .btn-1
+  {
+    width: 100px;
+    height: 40px;
+    margin-top: 50px;
+  }
+
+  .brand-but
+  {
+    margin-right: 50px;
+  }
+
+  .add-brand-heading {
+    margin-top: 50px; /* Adjust the value as needed */
   }

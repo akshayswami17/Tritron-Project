@@ -1,0 +1,32 @@
+.form-row {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+
+}
+
+  .add-model-container
+  {
+    width: 800px;
+    background-color: antiquewhite;
+    margin-left: 250px;
+  }
+  
+
+  .btn-btn-primary-model
+  {
+    margin-top: 70px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .model-heading
+  {
+    background-color: aquamarine;
+    margin-top: 50px;
+  }
+  

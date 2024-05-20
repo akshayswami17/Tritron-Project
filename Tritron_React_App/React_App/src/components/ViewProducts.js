@@ -171,7 +171,7 @@ const ViewProducts = () => {
             <tr key={model.model_Id}>
               <td> {model.model_Id}</td>
               <td>{model.brand.brand_name}</td>
-              <td>{model.model_Name}</td>
+              <td>{model.modelName}</td>
               <td>{model.basePrice}</td>
               <td>{model.description}</td>
               

@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "models")
 public class Model2 {
-
+// add model_Id as primary key and brand and cat
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "brand_Id")
-    private Integer brandId;
+    @Column(name = "model_Id")
+    private Integer modelId;
 
     @Column(name = "category_id")
     private Integer categoryId;
