@@ -6,7 +6,8 @@ package com.example.TritronEcom.repositories;
 
 import com.example.TritronEcom.entities.Brand;
 import com.example.TritronEcom.entities.Category;
-import com.example.TritronEcom.entities.Model;
+import com.example.TritronEcom.entities.Model2;
+import com.example.TritronEcom.entities.Model2;
 import com.example.TritronEcom.entities.Product;
 import com.example.TritronEcom.entities.Seller;
 
@@ -27,12 +28,12 @@ import org.springframework.stereotype.Repository;
 public interface ProductRepository extends JpaRepository<Product ,Integer> {
  	//@Query("Select p, m from Product p, Model m  where p.model = m.model_Id")
 	@Query("select p from Product p where p.model = :m")
- 	public List<Product> getProductsByModel(Model m);
+ 	public List<Product> getProductsByModel(Model2 m);
 
     
     @Modifying
     @Query("UPDATE Product p SET p.discounted_price = :discountedPrice WHERE p.model = :m and p.seller = :s")
-    int updateDiscountedPrice(float discountedPrice, Model m, Seller s);
+    int updateDiscountedPrice(float discountedPrice, Model2 m, Seller s);
 
     
     

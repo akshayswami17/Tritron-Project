@@ -31,7 +31,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "model_id")
-    private Model model;
+    private Model2 model;
 
     @Column(name = "discounted_price")
     private float discounted_price;
@@ -44,7 +44,7 @@ public class Product {
 		super();
 	}
 
-	public Product(Model model, float discounted_price, Seller seller) {
+	public Product(Model2 model, float discounted_price, Seller seller) {
 		super();
 		this.model = model;
 		this.discounted_price = discounted_price;
@@ -59,11 +59,11 @@ public class Product {
 		this.product_id = product_id;
 	}
 
-	public Model getModel() {
+	public Model2 getModel() {
 		return model;
 	}
 
-	public void setModel(Model model) {
+	public void setModel(Model2 model) {
 		this.model = model;
 	}
 

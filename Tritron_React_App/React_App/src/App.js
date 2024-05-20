@@ -20,7 +20,7 @@ import UpdatePass from './components/UpdatePass';
 import HomeSlideShow from './components/HomeSlideShow';
 import NavBar from './components/NavBar';
 import AnimatedHeading from './components/AnimatedHeading';
-import AddProductPage from './components/AddProductPage';
+import AddProduct from './components/AddProduct';
 import ViewProducts from './components/ViewProducts';
 import ShowProducts from './components/ShowProducts';
 import AddBrand from './components/AddBrand';
@@ -34,6 +34,7 @@ import FeedbackForm from './components/FeedbackForm';
 import ViewUsers from './components/ViewUsers';
 import SellersData from './components/SellersData';
 import ConsumerData from './components/ConsumerData';
+import NotFound from './components/NotFound';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -78,10 +79,10 @@ function App() {
         </Route>
 
         <Route path="/seller_home" element={<SellerHome />}>
-        <Route path="updateprofile" element={<UpdateProfile />} />
-          <Route path="AddProductPage" element={<AddProductPage />} />
+        <Route path="updateprofile" element={<NotFound />} />
+          <Route path="AddProductPage" element={<AddProduct />} />
           <Route path="viewFeedback" element={<FeedbackData />} />
-          <Route path="updatediscountedprice" element={<UpdateDiscountedPrice />} />
+          <Route path="updatediscountedprice" element={<NotFound />} />
           <Route path='vieworders' element={<ViewOrders/>}/>
           
 
