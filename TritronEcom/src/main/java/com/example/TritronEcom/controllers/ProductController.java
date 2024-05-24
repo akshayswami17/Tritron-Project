@@ -5,13 +5,14 @@ package com.example.TritronEcom.controllers;
 
 import com.example.TritronEcom.entities.Area;
 
-import com.example.TritronEcom.entities.Model;
+import com.example.TritronEcom.entities.Model2;
 import com.example.TritronEcom.entities.Product;
 import com.example.TritronEcom.entities.Role;
 import com.example.TritronEcom.entities.Seller;
 import com.example.TritronEcom.entities.SellerRegistration;
 import com.example.TritronEcom.entities.User;
-import com.example.TritronEcom.services.ModelService;
+import com.example.TritronEcom.services.Model2Service;
+import com.example.TritronEcom.services.Model2Service;
 import com.example.TritronEcom.services.ProductService;
 import com.example.TritronEcom.services.SellerService;
 
@@ -48,7 +49,7 @@ public class ProductController {
     private ProductService productService;
     
     @Autowired
-    private ModelService modelService;
+    private Model2Service modelService;
     
     @Autowired
     SellerService sellerService;
@@ -69,11 +70,11 @@ public class ProductController {
 //    public List<Product> getProductsByModel_Id(@RequestParam int mid) {
 //        return productService.getProductsByModel1(mid);
 //    }
-    @GetMapping("/getProducts")
-    public List<Product> getProductsByModel_Id(@RequestParam("id") int mid) {
-    	System.out.println(mid);
-      return productService.getProductsByModel1(mid);
-    }
+//    @GetMapping("/getProducts")
+//    public List<Product> getProductsByModel_Id(@RequestParam("id") int mid) {
+//    	System.out.println(mid);
+//      return productService.getProductsByModel1(mid);
+//    }
     
     /*public Model getModelByProductId(int pid) {
     	
@@ -94,6 +95,11 @@ public class ProductController {
     @GetMapping("/product/{proid}")
     public Product getProductByProductId(@PathVariable("proid") int pid) {
     	return productService.getProductById(pid);
+    }
+    
+    @PostMapping("/addProduct")
+    public Product addProduct(@RequestBody Product product) {
+        return productService.addProduct(product);
     }
     
     
