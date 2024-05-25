@@ -8,10 +8,10 @@ import com.example.TritronEcom.entities.Area;
 import com.example.TritronEcom.entities.Brand;
 import com.example.TritronEcom.entities.Category;
 import com.example.TritronEcom.entities.City;
-import com.example.TritronEcom.entities.Model;
+import com.example.TritronEcom.entities.Model2;
 import com.example.TritronEcom.entities.Product;
 import com.example.TritronEcom.entities.Seller;
-import com.example.TritronEcom.repositories.ModelRepository;
+import com.example.TritronEcom.repositories.Model2Repository;
 import com.example.TritronEcom.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,7 @@ public class ProductService {
     private ProductRepository productRepository;
     
     @Autowired
-    private ModelRepository modelRepository;
+    private Model2Repository modelRepository;
     
     
 
@@ -51,17 +51,19 @@ public class ProductService {
         return productRepository.save(product);
     }
     
-    public List<Product> getProductsByModel1(int id)
-	{
-    	Model m = modelRepository.findById(id).get();
-    	System.out.println(m);
-    	return productRepository.getProductsByModel(m);		
-	}
+//    public List<Product> getProductsByModel1(int id)
+//	{
+//    	Model m = modelRepository.findById(id).get();
+//    	System.out.println(m);
+//    	return productRepository.getProductsByModel(m);		
+//	}
     
     
-    public int updateDiscountedPrice(Seller s, Model m, float discountedPrice) {
+    public int updateDiscountedPrice(Seller s, Model2 m, float discountedPrice) {
         return productRepository.updateDiscountedPrice(discountedPrice, m , s);
     }
+   
+    
    
 
     
