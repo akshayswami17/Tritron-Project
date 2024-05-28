@@ -3,14 +3,16 @@ package com.example.TritronEcom.controllers;
 import com.example.TritronEcom.entities.Model2;
 import com.example.TritronEcom.repositories.Model2Repository;
 import com.example.TritronEcom.services.Model2Service;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@RequestMapping("/api")
 public class Model2Controller {
 
     @Autowired
@@ -34,6 +36,7 @@ public class Model2Controller {
     public Model2 getModelById(@PathVariable Integer id) {
         return model2Repository.findById(id).orElse(null);
     }
+
 
     @DeleteMapping("/{id}")
     public void deleteModel(@PathVariable Integer id) {

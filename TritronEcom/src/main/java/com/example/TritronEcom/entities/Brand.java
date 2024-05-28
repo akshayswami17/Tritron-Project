@@ -60,13 +60,13 @@ public class Brand {
 		this.brand_name = brand_name;
 	}
 	
-	public List<Model2> getModels() {
-        return models;
-    }
-
-    public void setModels(List<Model2> models) {
-        this.models = models;
-    }
+//	public List<Model2> getModels() {
+//        return models;
+//    }
+//
+//    public void setModels(List<Model2> models) {
+//        this.models = models;
+//    }
 
 
 
