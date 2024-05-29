@@ -1,99 +1,69 @@
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Link } from 'react-router-dom'; 
+// import { useNavigate } from 'react-router-dom';
 
-// const ViewUsers = () => {
-//   const [users, setUsers] = useState([]);
+// const ViewProducts = () => {
+//   const navigate = useNavigate();
+//   const [models, setModels] = useState([]);
 //   const [searchCriteria, setSearchCriteria] = useState('category');
 //   const [searchTerm, setSearchTerm] = useState('');
 
-//   const handleDelete = (id) => {
-//     console.log("Delete clicked for user with ID:", id);
-//     fetch(`http://localhost:8080/deleteUser?id=${id}`)
+//   const handleShow = (id) => {
+//     console.log("Show clicked for product with ID:" + id);
+//     fetch(`http://localhost:8080/getProducts?id=${id}`)
 //       .then((response) => response.json())
 //       .then((data) => {
 //         console.log("Data:", data);
+//         localStorage.setItem("searchedProducts", JSON.stringify(data));
+//         navigate("../showProducts");
 //       })
 //       .catch((error) =>
-//         console.error("Error fetching data before delete:", error)
+//         console.error("Error fetching data before show:", error)
 //       );
 //   };
-  
 
 //   const handleSearch = () => {
 //     console.log(`Searching by ${searchCriteria}: ${searchTerm}`);
-
-    
+//     // Add search functionality here if needed
 //   };
 
 //   useEffect(() => {
-//     axios.get('http://localhost:8080/viewUsers')
+//     axios.get('http://localhost:8080/getAllModels')
 //       .then(response => {
-//         setUsers(response.data);
+//         setModels(response.data);
 //       })
 //       .catch(error => {
-//         console.error('Error fetching user data:', error);
+//         console.error('Error fetching product data:', error);
 //       });
 //   }, []);
 
 //   return (
-//     <div className="container mt-4">
-//       <h2 className="mb-4" style={{ color: '#007BFF' }}>Users</h2>
-//       <div className="mb-3 row">
-//         <div className="col-md-3">
-//           <select
-//             className="form-select"
-//             value={searchCriteria}
-//             onChange={(e) => setSearchCriteria(e.target.value)}
-//           >
-//             <option value="category">Category</option>
-//             <option value="brandName">Brand Name</option>
-//             <option value="modelName">Model Name</option>
-//           </select>
-//         </div>
-//         <div className="col-md-6">
-//         <input
-//   type="text"
-//   className="form-control"
-//   placeholder={`Search by ${searchCriteria}`}
-//   value={searchTerm}
-//   onChange={(e) => setSearchTerm(e.target.value)}
-// />
+//     <div className="container mt-4 rounded-4">
+//       <h2 className="mb-4" style={{ color: '#007BFF' }}>Products</h2>
 
-//         </div>
-//         <div className="col-md-3">
-//           <button className="btn btn-primary" onClick={handleSearch}>
-//             Search
-//           </button>
-//         </div>
-//       </div>
 //       <table className="table table-striped table-hover">
 //         <thead>
 //           <tr>
-//             <th>User ID</th>
-//             <th>Category</th>
-//             <th>Brand Name</th>
+//             {/* <th>Product ID</th> */}
 //             <th>Model Name</th>
-//             <th>Description</th>
 //             <th>Base Price</th>
-//             <th>Discounted Price</th>
+//             <th>Brand</th>
+//             <th>Description</th>
 //             <th>Action</th>
 //           </tr>
 //         </thead>
 //         <tbody>
-//           {users.map(user => (
-//             <tr key={user.id}>
-//               <td>{user.id}</td>
-//               <td>{user.category}</td>
-//               <td>{user.brandName}</td>
-//               <td>{user.modelName}</td>
-//               <td>{user.description}</td>
-//               <td>{user.basePrice}</td>
-//               <td>{user.discountedPrice}</td>
+//           {models.map((modelss) => (
+//             <tr key={modelss.model_id}>
+//               {/* <td>{model.model_id}</td> */}
+//               <td>{modelss.modelName}</td>
+//               <td>{modelss.basePrice}</td>
+//               <td>{modelss.brand ? modelss.brand.brand_name : 'ERROR'}</td>
+//               <td>{modelss.description}</td>
 //               <td>
-//                 <button className="btn btn-danger" onClick={() => handleDelete(user.id)}>
-//                   Delete
+//                 <button className="btn-viewProduct" onClick={() => handleShow(modelss.model_id)}>
+//                   Buy now
 //                 </button>
 //               </td>
 //             </tr>
@@ -104,14 +74,14 @@
 //   );
 // };
 
-// export default ViewUsers;
+// export default ViewProducts;
 
 
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 const ViewProducts = () => {
   const navigate = useNavigate();
@@ -120,32 +90,40 @@ const ViewProducts = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleShow = (id) => {
-    console.log("Delete clicked for product with ID:"+id);
-    fetch(`http://localhost:8080/getProducts?id=${id}`)
-      .then((response) => response.json())
+    if (!id) {
+      console.error("handleShow called with invalid id");
+      return;
+    }
+    console.log("Show clicked for product with ID: " + id);
+    fetch(`http://localhost:8080/api/getProducts/${id}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log("Data:", data);
-        localStorage.setItem("searchedProducts",JSON.stringify(data));
-        navigate("../showProducts");
+        localStorage.setItem("searchedProducts", JSON.stringify(data));
+        navigate("../showproductdetails");
       })
-      .catch((error) =>
-        console.error("Error fetching data before delete:", error)
-      );
+      .catch((error) => {
+        console.error("Error fetching data before show:", error);
+      });
   };
-  
 
   const handleSearch = () => {
     console.log(`Searching by ${searchCriteria}: ${searchTerm}`);
-
-    
+    // Add search functionality here if needed
   };
 
   useEffect(() => {
-    axios.get('http://localhost:8080/getAllModels')
-      .then(response => {
+    axios.get('http://localhost:8080/api/getAllModels')
+      .then((response) => {
         setModels(response.data);
+        console.log("Models data fetched:", response.data); // Log fetched data
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Error fetching product data:', error);
       });
   }, []);
@@ -153,33 +131,29 @@ const ViewProducts = () => {
   return (
     <div className="container mt-4 rounded-4">
       <h2 className="mb-4" style={{ color: '#007BFF' }}>Products</h2>
-      
+
       <table className="table table-striped table-hover">
         <thead>
           <tr>
-            <th>Product ID</th>
-            <th>Brand Name</th>
+            <th>Model ID</th>
             <th>Model Name</th>
             <th>Base Price</th>
+            <th>Brand</th>
             <th>Description</th>
-            
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {models.map(model => (
-            <tr key={model.model_Id}>
-              <td> {model.model_Id}</td>
-              <td>{model.brand.brand_name}</td>
+          {models.map((model, index) => (
+            <tr key={model.modelId ? model.modelId : `model-${index}`}>
+              <td>{model.modelId}</td>
               <td>{model.modelName}</td>
               <td>{model.basePrice}</td>
+              <td>{model.brand ? model.brand.brand_name : 'ERROR'}</td>
               <td>{model.description}</td>
-              
-
-              
               <td>
-                <button className="btn btn-danger" onClick={() => handleShow(model.model_Id)}>
-                  Show Sellers
+                <button className="btn-viewProduct" onClick={() => handleShow(model.modelId)}>
+                  Buy now
                 </button>
               </td>
             </tr>

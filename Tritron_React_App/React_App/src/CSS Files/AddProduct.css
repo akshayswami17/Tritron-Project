@@ -38,3 +38,12 @@
 .error-msg {
     margin-top: 5px;
 }
+
+.btn-viewProduct
+{
+    width: 150px;
+    margin-left: 50px;
+    margin-right: -50px;
+    color: rgb(239, 245, 245);
+    background-color: rgb(41, 159, 12);
+}

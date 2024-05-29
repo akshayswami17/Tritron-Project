@@ -19,9 +19,12 @@ export default function ConsumerHome() {
                         <li className="nav-item">
                             <Link to="searchproducts" className="nav-Link px-3" style={{ color: 'white' }}> Search Products </Link>
                         </li>
-                        {/* <li className="nav-item">
+                        <li className="nav-item">
+                            <Link to="showproductdetails" className="nav-Link px-3" style={{ color: 'white' }}> ShowProductDetails </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link to="/addcart" className="nav-Link px-3" style={{ color: 'white' }}> Add Cart </Link>
-                        </li> */}
+                        </li>
                         <li className="nav-item">
                             <Link to="confirmorder" className="nav-Link px-3" style={{ color: 'white' }}> Confirm Order </Link>
                         </li>

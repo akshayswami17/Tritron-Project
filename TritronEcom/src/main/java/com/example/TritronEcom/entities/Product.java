@@ -51,6 +51,10 @@ public class Product {
 		this.seller = seller;
 	}
 
+	public Product(Integer id) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getproduct_id() {
 		return product_id;
 	}
@@ -79,8 +83,8 @@ public class Product {
 		return seller;
 	}
 
-	public void setSeller(Seller seller) {
-		this.seller = seller;
+	public void setSeller(Seller string) {
+		this.seller = string;
 	}
     
     
