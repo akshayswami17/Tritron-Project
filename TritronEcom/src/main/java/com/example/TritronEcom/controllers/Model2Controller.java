@@ -1,6 +1,7 @@
 package com.example.TritronEcom.controllers;
 
 import com.example.TritronEcom.entities.Model2;
+import com.example.TritronEcom.entities.Product;
 import com.example.TritronEcom.repositories.Model2Repository;
 import com.example.TritronEcom.services.Model2Service;
 
@@ -32,9 +33,15 @@ public class Model2Controller {
         return model2Service.getAllModels();
     }
 
+//    @GetMapping("/getProducts/{id}")
+//    public Model2 getModelById(@PathVariable Integer id) {
+//        return model2Repository.findById(id).orElse(null);
+//    }
     @GetMapping("/getProducts/{id}")
-    public Model2 getModelById(@PathVariable Integer id) {
-        return model2Repository.findById(id).orElse(null);
+    public ResponseEntity<Product> getProduct(@PathVariable Integer id) {
+        // Logic to get product by ID
+        Product product = new Product(id);
+        return ResponseEntity.ok(product);
     }
 
 
