@@ -42,7 +42,7 @@ export default function ConsumerHome() {
                     </ul>
                 </div>
             </nav>
-            <h1>Consumer Home</h1>
+            {/* <h1>Consumer Home</h1> */}
             <Outlet />
         </div>
     )

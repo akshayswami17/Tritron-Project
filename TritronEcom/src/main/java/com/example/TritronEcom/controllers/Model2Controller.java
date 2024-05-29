@@ -58,7 +58,7 @@ public class Model2Controller {
         Product product = new Product();
         product.setproduct_id(id);
         product.setModel(model);
-        product.setdiscounted_price((float) (model.getBasePrice() * 0.9)); // Example discount calculation
+        product.setdiscounted_price((float) (model.getBasePrice() * 0.09)); // Example discount calculation
         product.setSeller(Seller); // Replace with actual seller information if available
 
         return ResponseEntity.ok(product);

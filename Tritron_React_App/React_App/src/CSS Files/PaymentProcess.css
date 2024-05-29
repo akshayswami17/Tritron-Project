@@ -1,0 +1,37 @@
+/* PaymentProcess.css */
+
+.container-payprocess {
+    width: 500px;
+    margin-left: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .heading-payprocess {
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    color: #007BFF;
+    font-size: 1.8em;
+  }
+  
+  .btn-payprocess {
+    margin-top: 20px;
+    margin-right: 300px;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
