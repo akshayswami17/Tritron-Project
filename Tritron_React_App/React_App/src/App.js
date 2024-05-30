@@ -37,6 +37,7 @@ import ConsumerData from './components/ConsumerData';
 import NotFound from './components/NotFound';
 import ShowProductDetails from './components/ShowProductDetails';
 import PaymentProcess from './components/PaymentProcess';
+import PaymentOptions from './components/PaymentOptions';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -71,6 +72,7 @@ function App() {
 
         <Route path="/consumer_home" element={<ConsumerHome />}>
           <Route path="searchproducts" element={<ViewProducts />} />
+          <Route path="showproducts" element={<ShowProducts />} />
           <Route path="showproductdetails" element={<ShowProductDetails />} />
           <Route path="showProducts" element={<ShowProducts />} />
           <Route path="addcart" element={<AddToCart />} />
@@ -79,6 +81,7 @@ function App() {
           <Route path="updateprofile" element={<UpdateProfile />} />
           <Route path="feedbackform" element={<FeedbackForm />} />
           <Route path="paymentprocess" element={<PaymentProcess />} />
+          <Route path="paymentoptions" element={<PaymentOptions />} />
 
         </Route>
 
