@@ -15,6 +15,7 @@ const PaymentProcess = () => {
  
   const handlePayment = () => {
     // Implement payment logic here
+    navigate("../paymentoptions", { state: { product } });
     console.log('Processing payment for:', product);
   };
 
