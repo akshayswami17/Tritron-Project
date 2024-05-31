@@ -20,7 +20,7 @@ export default function ConsumerHome() {
                             <Link to="searchproducts" className="nav-Link px-3" style={{ color: 'white' }}> Search Products </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="showproducts" className="nav-Link px-3" style={{ color: 'white' }}> View Products </Link>
+                            <Link to="showproducts" className="nav-Link px-3" style={{ color: 'white' }}> Show Products </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="showproductdetails" className="nav-Link px-3" style={{ color: 'white' }}> ShowProductDetails </Link>

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import '../CSS Files/ShowProducts.css'; // Import your CSS file
+import image6 from './Images/online6.jpg';
 
-const ViewProducts = () => {
+const ShowProducts = () => {
   const navigate = useNavigate();
   const [models, setModels] = useState([]);
   const [searchCriteria, setSearchCriteria] = useState('category');
@@ -49,28 +51,29 @@ const ViewProducts = () => {
   }, []);
 
   return (
-    <div className="container mt-4">
+    <div className="container-showproducts">
       <h2 className="mb-4" style={{ color: '#007BFF' }}>Products</h2>
       <div className="row">
         {models.map((model, index) => (
-          <div className="col-md-6 mb-3" key={model.modelId ? model.modelId : `model-${index}`}>
-            <div className="card h-100">
+          <div className="col-md-3 mb-2" key={model.modelId ? model.modelId : `model-${index}`}>
+            <div className="card h-80">
               <div className="row g-0">
-                <div className="col-md-4">
+                <div className="col-md-12">
                   {/* Placeholder image or model image */}
                   <img 
                     src={model.imageUrl || `${process.env.PUBLIC_URL}/default-image-path.png`} 
+                    onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/../Images/card.png`}
                     className="img-fluid rounded-start" 
                     alt={model.modelName} 
                   />
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-12">
                   <div className="card-body">
                     <h5 className="card-title">{model.modelName}</h5>
                     <p className="card-text"><strong>Base Price:</strong> {model.basePrice}</p>
                     <p className="card-text"><strong>Brand:</strong> {model.brand ? model.brand.brand_name : 'ERROR'}</p>
-                    <p className="card-text">{model.description}</p>
-                    <button className="btn btn-primary" onClick={() => handleShow(model.modelId)}>
+                    <p className="card-text"><strong>Description:</strong> {model.description}</p>
+                    <button className="btn btn-outline-primary" onClick={() => handleShow(model.modelId)}>
                       Buy now
                     </button>
                   </div>
@@ -84,4 +87,4 @@ const ViewProducts = () => {
   );
 };
 
-export default ViewProducts;
+export default ShowProducts;
