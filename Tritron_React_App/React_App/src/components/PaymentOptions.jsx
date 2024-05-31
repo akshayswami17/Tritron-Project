@@ -1,6 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../CSS Files/PaymentOptions.css'; // Make sure to create and style this CSS file
+import image1 from '../components/Images/phonepay.png';
+import image2 from '../components/Images/goooglepay.png';
+import image3 from '../components/Images/card.png';
+import image4 from '../components/Images/cashondelivery.png';
 
 const PaymentOptions = () => {
   const navigate = useNavigate();
@@ -14,25 +18,33 @@ const PaymentOptions = () => {
       <h2 className="heading-payment-options">Choose Payment Method</h2>
       <div className="payment-methods">
         <div className="payment-method">
-          <img src="/public/Images/phonepay.png" alt="PhonePe" className="payment-image" />
+          <a href="https://www.phonepe.com/" target="_blank" rel="noopener noreferrer">
+            <img src={image1} alt="PhonePe" className="payment-image" />
+          </a>
           <p>PhonePe</p>
         </div>
         <div className="payment-method">
-          <img src="/path/to/googlepay-image.jpg" alt="Google Pay" className="payment-image" />
+          <a href="https://pay.google.com/" target="_blank" rel="noopener noreferrer">
+            <img src={image2} alt="Google Pay" className="payment-image" />
+          </a>
           <p>Google Pay</p>
         </div>
         <div className="payment-method">
-          <img src="/path/to/card-image.jpg" alt="Card" className="payment-image" />
+          <a href="https://www.visa.com/" target="_blank" rel="noopener noreferrer">
+            <img src={image3} alt="Card" className="payment-image" />
+          </a>
           <p>Card</p>
         </div>
         <div className="payment-method">
-          <img src="/path/to/cashondelivery-image.jpg" alt="Cash on Delivery" className="payment-image" />
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src={image4} alt="Cash on Delivery" className="payment-image" />
+          </a>
           <p>Cash on Delivery</p>
         </div>
       </div>
       <button className="btn btn-primary" onClick={handleBack}>Back</button>
     </div>
-  );
+  );  
 };
 
 export default PaymentOptions;
