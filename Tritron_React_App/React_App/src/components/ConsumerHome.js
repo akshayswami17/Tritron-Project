@@ -90,17 +90,19 @@ export default function ConsumerHome() {
                     </ul>
                 </div>
             </nav>
-            <div className="container">
+            <div className="container-profile">
                 <div className="row">
                     <div className="col-md-3">
                         <h3>User Data</h3>
-                        <p>Username: {userData.username}</p>
-                        {/* Add other user data fields */}
+                        <p>Username: {userData && <p>Username: {userData.username}</p>}</p> 
+                       
+                        
                     </div>
-                    <div className="col-md-9">
-                        <Outlet />
-                    </div>
+                    
                 </div>
+            </div>
+            <div className="col-md-9">
+                        <Outlet />
             </div>
         </div>
     );
