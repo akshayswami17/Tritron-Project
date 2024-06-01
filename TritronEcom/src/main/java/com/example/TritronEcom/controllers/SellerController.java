@@ -57,6 +57,8 @@ public class SellerController {
 		
 		Seller s = new Seller(slr.getGst_no(),slr.getLicense_id(),slr.getShop_name(),slr.getPhone_no(),slr.getEmail(), slr.getAddress(),ar,saved);
 		System.out.println(s);
+		
+		
 
 		return sservice.saveSeller(s);
 		
