@@ -18,6 +18,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	@Query("select u from User u where username= :uid and password= :pwd")	//HQL Query
 	public Optional<User> getUser(String uid, String pwd);
 	
+	User findByUsernameAndPassword(String username, String password);
+	
 	
 	
 }
