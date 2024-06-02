@@ -38,6 +38,7 @@ import NotFound from './components/NotFound';
 import ShowProductDetails from './components/ShowProductDetails';
 import PaymentProcess from './components/PaymentProcess';
 import PaymentOptions from './components/PaymentOptions';
+import PhonePePayment from './components/PhonePePayment';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -82,6 +83,7 @@ function App() {
           <Route path="feedbackform" element={<FeedbackForm />} />
           <Route path="paymentprocess" element={<PaymentProcess />} />
           <Route path="paymentoptions" element={<PaymentOptions />} />
+          <Route path="phonepe-payment" element={<PhonePePayment />} />
 
         </Route>
 

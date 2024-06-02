@@ -1,0 +1,41 @@
+.container-phonepe-payment {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading-phonepe-payment {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .payment-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .payment-form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .btn-primary {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .btn-secondary {
+    margin-top: 10px;
+    width: 100%;
+  }
+  

@@ -94,7 +94,7 @@ export default function ConsumerHome() {
                 <div className="row">
                     <div className="col-md-3">
                         <h3>User Data</h3>
-                        <p>Username: {userData && <p>Username: {userData.username}</p>}</p> 
+                        {/* <p>Username: {userData && <p>Username: {userData.username}</p>}</p>  */}
                        
                         
                     </div>

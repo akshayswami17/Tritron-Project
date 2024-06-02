@@ -17,10 +17,8 @@ const PaymentOptions = () => {
     <div className="container-payment-options">
       <h2 className="heading-payment-options">Choose Payment Method</h2>
       <div className="payment-methods">
-        <div className="payment-method">
-          <a href="https://www.phonepe.com/" target="_blank" rel="noopener noreferrer">
-            <img src={image1} alt="PhonePe" className="payment-image" />
-          </a>
+      <div className="payment-method" onClick={() => navigate('/phonepe-payment')}>
+          <img src={image1} alt="PhonePe" className="payment-image" />
           <p>PhonePe</p>
         </div>
         <div className="payment-method">
