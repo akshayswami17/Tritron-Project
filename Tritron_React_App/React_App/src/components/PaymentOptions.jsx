@@ -17,7 +17,7 @@ const PaymentOptions = () => {
     <div className="container-payment-options">
       <h2 className="heading-payment-options">Choose Payment Method</h2>
       <div className="payment-methods">
-      <div className="payment-method" onClick={() => navigate('/phonepe-payment')}>
+      <div className="payment-method" onClick={() => navigate('/phonepepayment')}>
           <img src={image1} alt="PhonePe" className="payment-image" />
           <p>PhonePe</p>
         </div>

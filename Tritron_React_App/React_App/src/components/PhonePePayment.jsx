@@ -62,8 +62,9 @@ const PhonePePayment = () => {
           />
         </div>
         <button type="submit" className="btn btn-primary">Pay Now</button>
+        <button className="btn btn-secondary" onClick={() => navigate(-1)}>Back</button>
       </form>
-      <button className="btn btn-secondary" onClick={() => navigate(-1)}>Back</button>
+      
     </div>
   );
 };
