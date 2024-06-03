@@ -55,7 +55,7 @@ function App() {
         <Route path='/login' element={<LoginComp />} />
         <Route path='/sellerreg' element={<SellerReg />} />
         <Route path='/consumerreg' element={<ConsumerReg />} />
-        
+        <Route path="/phonepepayment" element={<PhonePePayment />} />
         
         <Route path="/logout" element={<LoginComp />} />
         
@@ -83,7 +83,7 @@ function App() {
           <Route path="feedbackform" element={<FeedbackForm />} />
           <Route path="paymentprocess" element={<PaymentProcess />} />
           <Route path="paymentoptions" element={<PaymentOptions />} />
-          <Route path="phonepe-payment" element={<PhonePePayment />} />
+          
 
         </Route>
 
