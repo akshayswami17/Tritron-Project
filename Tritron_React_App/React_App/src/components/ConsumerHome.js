@@ -58,12 +58,14 @@ import { useSelector } from 'react-redux';
 import { Link, Outlet } from "react-router-dom";
 import "../CSS Files/AdminHome.css";
 import logo from "./Images/logo1.jpg";
+import ShowUsersData from './ShowUsersData';
 
 export default function ConsumerHome() {
     const userData = useSelector(state => state.user);
 
     return (
         <div>
+            <span><ShowUsersData/></span>
             <nav className="navbar navbar-expand-sm bg-dark mb-3" >
                 <div className="container-fluid">
                     <li className="navbar-brand">
@@ -90,20 +92,10 @@ export default function ConsumerHome() {
                     </ul>
                 </div>
             </nav>
-            <div className="container-profile">
-                <div className="row">
-                    <div className="col-md-3">
-                        <h3>User Data</h3>
-                        {/* <p>Username: {userData && <p>Username: {userData.username}</p>}</p>  */}
-                       
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            <div className="col-md-9">
+           
+            <span className="cusNavBar">
                         <Outlet />
-            </div>
+            </span>
         </div>
     );
 }

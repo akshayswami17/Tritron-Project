@@ -143,6 +143,12 @@ export default function LoginComp() {
     username: "",
     password: ""
   };
+  // Example login function
+const handleLogin = (userId) => {
+  // Assuming userId is obtained after a successful login
+  localStorage.setItem('userId', userId);
+};
+
 
   const reducer = (state, action) => {
     switch (action.type) {
