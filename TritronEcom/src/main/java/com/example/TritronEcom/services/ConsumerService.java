@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.TritronEcom.entities.Consumer;
 import com.example.TritronEcom.entities.Seller;
+import com.example.TritronEcom.entities.User;
 import com.example.TritronEcom.repositories.ConsumerRepository;
 
 @Service
@@ -25,5 +26,9 @@ public class ConsumerService {
 	
 	 public List<Consumer> getAllConsumers() {
 	        return crepo.findAll();
+	    }
+	 
+	 public Consumer findByUser(User user) {
+	        return crepo.findByUser(user);
 	    }
 }

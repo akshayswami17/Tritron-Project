@@ -64,5 +64,9 @@ public class UserService {
 	        return urepo.findById(id);
 	    }
 
+	 
+	 public User findByUsername(String username) {
+	        return urepo.findByUsername(username);
+	    }
 	
 }
