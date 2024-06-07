@@ -34,7 +34,7 @@ const PaymentProcess = () => {
         <p><strong>Price to pay :</strong> {product.model.basePrice - product.discounted_price}</p>
         {/* <p><strong>Brand:</strong> {product.model.brand ? product.model.brand.brand_name : 'Unknown'}</p>
         <p><strong>Seller:</strong> {product.seller || 'Unknown'}</p> */}
-        <button className="btn btn-success btn-payprocess" onClick={handlePayment}>
+        <button className="btn btn-outline-success btn-payprocess" onClick={handlePayment}>
           Pay Now
         </button>
       </div>

@@ -11,8 +11,16 @@
   
   .registraction-container
   {
+    
+    margin: 0 auto;
+    
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 1000px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     margin-left: 320px;
   }
 
@@ -20,6 +28,7 @@
   {
     width: 100px;
     height: 40px;
+   
   }
   .btn-1
   {

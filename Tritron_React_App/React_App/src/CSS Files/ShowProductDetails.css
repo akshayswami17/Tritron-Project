@@ -12,8 +12,9 @@
 
 .container-showproductdetails {
     width: 600px;
-    margin-left: 250px;
-    margin: 20px;
+    /* margin-left: 250px; */
+    /* margin: 20px; */
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -29,7 +30,8 @@
   
   .btn-showproductdetails {
     margin-top: 20px;
-    margin-right: 250px;
+    margin-left: -20px;
+    width: 200px;
   }
   
   .btn-primary {

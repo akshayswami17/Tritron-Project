@@ -241,8 +241,8 @@ export default function SellerReg() {
     <div id="emailHelp" className="form-text"></div>
 </div>              
                 
-                <button type="submit" className="btn-1 btn-primary mb-3" onClick={(e)=> {sendData(e)}}>Submit</button>
-                <button type="reset" className="btn-1 btn-info mb-3" onClick={()=>{dispatch({type:'reset'})}}>Clear</button>
+                <button type="submit" className="btn-1 btn btn-outline-primary mb-3" onClick={(e)=> {sendData(e)}}>Submit</button>
+                <button type="reset" className="btn-1 btn btn-outline-info mb-3" onClick={()=>{dispatch({type:'reset'})}}>Clear</button>
 </div>
             </form>
              {/* <p>{JSON.stringify(info)}</p> */}

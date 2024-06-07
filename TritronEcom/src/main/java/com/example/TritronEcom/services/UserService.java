@@ -58,6 +58,11 @@ public class UserService {
 				return urepo.save(updatedUser);
 			});
 		}
+	 
+	 
+	 public Optional<User> getUserById(Integer id) {
+	        return urepo.findById(id);
+	    }
 
 	
 }

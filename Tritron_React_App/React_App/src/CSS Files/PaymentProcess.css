@@ -2,8 +2,9 @@
 
 .container-payprocess {
     width: 500px;
-    margin-left: 300px;
-    margin: 20px;
+    /* margin-left: 300px;
+    margin: 20px; */
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -19,7 +20,7 @@
   
   .btn-payprocess {
     margin-top: 20px;
-    margin-right: 300px;
+    margin-left: -20px;
   }
   
   .btn-success {

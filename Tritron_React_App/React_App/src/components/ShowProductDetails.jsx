@@ -33,7 +33,7 @@ const ShowProductDetails = () => {
         <p><strong>Price to pay :</strong> {product.model.basePrice - product.discounted_price}</p>
         {/* <p><strong>Brand:</strong> {product.model && product.model.brand ? product.model.brand.brand_name : 'Unknown'}</p>
         <p><strong>Seller:</strong> {product.seller}</p> */}
-        <button className="btn btn-primary btn-showproductdetails" onClick={handleProceedToPayment}>
+        <button className="btn btn-outline-primary btn-showproductdetails" onClick={handleProceedToPayment}>
           Proceed to Payment
         </button>
       </div>

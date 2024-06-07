@@ -355,7 +355,7 @@
 //23-02-2024 at 11:02
 
 import React, { useState, useEffect } from 'react';
-import './UpdateDiscountedPrice.css';
+import '../CSS Files/UpdateDiscountedPrice.css';
 
 const UpdateDiscountedPricePage = () => {
   const [categories, setCategories] = useState([]);

@@ -12,13 +12,13 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSide">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/sellerreg" className="nav-link"  style={{ color: 'blue' }}>Seller Registration</Link>
+              <Link to="/sellerreg" className="nav-link"  style={{ color: 'white' }}>Seller Registration</Link>
             </li>
             <li className="nav-item">
-              <Link to="/consumerreg" className="nav-link"  style={{ color: 'blue' }}>Consumer Registration</Link>
+              <Link to="/consumerreg" className="nav-link"  style={{ color: 'white' }}>Consumer Registration</Link>
             </li>
             <li className="nav-item">
-              <Link to="/login" className="nav-link"  style={{ color: 'green' }}>Login</Link>
+              <Link to="/login" className="nav-link"  style={{ color: 'white' }}>Login</Link>
             </li>
           </ul>
         </div>

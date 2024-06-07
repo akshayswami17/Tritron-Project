@@ -77,7 +77,7 @@ const AddBrandForm = () => {
         <div className="form-actions">
             <div className="form-row-brand">
           <button type="submit" className="btn btn-primary">Submit</button>
-          <button type="button" className="btn btn-secondary brand-but" onClick={handleClear}>Clear</button>
+          <button type="button" className="btn btn-outline-secondary brand-but" onClick={handleClear}>Clear</button>
         </div>
         
         </div>

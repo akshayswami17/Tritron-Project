@@ -77,7 +77,7 @@ const SellerRegistration = () => {
               <td>{user.roleId}</td>
               <td>{user.activationStatus ? 'true' : 'false'}</td>
               <td>
-                <button className="btn btn-danger"
+                <button className="btn btn-outline-danger"
                  onClick={() => activateUser(user.id)}>Activate</button>
               </td>
             </tr>

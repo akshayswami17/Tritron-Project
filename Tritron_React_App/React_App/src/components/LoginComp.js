@@ -136,7 +136,7 @@ import React, { useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from './slice';
-import './LoginComp.css';
+import '../CSS Files/LoginComp.css';
 
 export default function LoginComp() {
   const initialState = {
@@ -256,8 +256,8 @@ const handleLogin = (userId) => {
         </div>
         
         <div className="form-row">
-          <button type="submit" className="btn btn-primary me-2">Submit</button>
-          <button type="button" className="btn btn-danger" onClick={handleClear}>Clear</button>
+          <button type="submit" className="btn btn-outline-primary me-2">Submit</button>
+          <button type="button" className="btn btn-outline-danger" onClick={handleClear}>Clear</button>
         </div>
       </form>
       {errorMsg && <p className="error-message">{errorMsg}</p>}

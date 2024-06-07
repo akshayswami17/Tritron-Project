@@ -225,8 +225,8 @@ export default function ConsumerReg() {
                 </div>
     </div>  
     <div className="form-row">           
-                <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
-                <button type="reset" className="btn btn-info mb-3" onClick={() => dispatch({type: 'reset'})}>Clear</button>
+                <button type="submit" className="btn btn-outline-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
+                <button type="reset" className="btn btn-outline-info mb-3" onClick={() => dispatch({type: 'reset'})}>Clear</button>
     </div>
             </form>
             

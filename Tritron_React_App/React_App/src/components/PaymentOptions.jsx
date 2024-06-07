@@ -17,7 +17,7 @@ const PaymentOptions = () => {
     <div className="container-payment-options">
       <h2 className="heading-payment-options">Choose Payment Method</h2>
       <div className="payment-methods">
-      <div className="payment-method" onClick={() => navigate('/phonepepayment')}>
+        <div className="payment-method" onClick={() => navigate('/phonepepayment')}>
           <img src={image1} alt="PhonePe" className="payment-image" />
           <p>PhonePe</p>
         </div>
@@ -40,7 +40,8 @@ const PaymentOptions = () => {
           <p>Cash on Delivery</p>
         </div>
       </div>
-      <button className="btn btn-primary" onClick={handleBack}>Back</button>
+      <button className="btn btn-outline-primary" onClick={handleBack}>Back</button>
+      <button className="btn btn-secondary-paymentoptions" onClick={() => navigate('/user_data')}>View User Data</button>
     </div>
   );  
 };

@@ -1,12 +1,12 @@
 .feedback-container {
-  width: 600px;
-  height: 550px;
-  margin-top: 50px;
-  margin-left: 340px;
-  /* margin-right: 300px; */
-  background-color: rgb(119, 194, 234);
-  border: 2px solid rgb(57, 4, 250);
-  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .feedback-container h1 {

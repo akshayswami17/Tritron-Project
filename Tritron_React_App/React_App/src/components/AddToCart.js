@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddToCart.css'; // Import the CSS file
+import '../CSS Files/AddToCart.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
 
 const AddToCart = ({ productName, onAddToCart }) => {

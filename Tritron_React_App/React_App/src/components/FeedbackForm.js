@@ -102,8 +102,8 @@ export default function FeedbackForm() {
                     <div className="error-msg" style={{ color: 'red' }}>{errorMsgs.comments}</div>
                 </div>
                 <div className="form-row">
-                    <button type="reset" className="btn btn-danger mb-3" onClick={() => dispatch({ type: 'reset' })}>Clear</button>
-                    <button type="submit" className="btn btn-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
+                    <button type="reset" className="btn btn-outline-danger mb-3" onClick={() => dispatch({ type: 'reset' })}>Clear</button>
+                    <button type="submit" className="btn btn-outline-primary mb-3" onClick={(e) => sendData(e)}>Submit</button>
                     {successMessage && <p className="text-success">{successMessage}</p>}
                 </div>
             </form>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './UpdateProfile.css';
+import '../CSS Files/UpdateProfile.css';
 
 function UpdateProfile() {
   const location = useLocation();

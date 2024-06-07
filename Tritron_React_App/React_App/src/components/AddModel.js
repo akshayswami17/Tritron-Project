@@ -140,7 +140,7 @@ const AddModel = () => {
           />
         </div>
       </div>
-      <button className="btn-btn-primary-model" onClick={handleSave}>Save</button>
+      <button className="btn-btn-outline-primary-model" onClick={handleSave}>Save</button>
     </div>
   );
 };
