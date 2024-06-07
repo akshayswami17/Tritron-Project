@@ -61,7 +61,8 @@ const handleLogin = (userId) => {
       if (data === null) {
         setErrorMsg("Wrong Username/Password");
       } else {
-        reduxDispatch(login(data)); // Dispatch login action with user data
+        reduxDispatch(login(data));
+        localStorage.setItem('userId', data.uid); // Dispatch login action with user data
         if (!data.activation_status) {
           alert("Request has not been approved");
         } else {

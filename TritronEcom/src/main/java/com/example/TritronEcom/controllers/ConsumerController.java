@@ -4,6 +4,7 @@ package com.example.TritronEcom.controllers;
 
 
 import java.util.List;
+import org.springframework.http.ResponseEntity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,8 +24,10 @@ import com.example.TritronEcom.entities.User;
 import com.example.TritronEcom.services.AreaService;
 import com.example.TritronEcom.services.CityService;
 import com.example.TritronEcom.services.ConsumerService;
+
 import com.example.TritronEcom.services.RoleService;
 import com.example.TritronEcom.services.UserService;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @CrossOrigin(origins="http://localhost:3000")
 @RestController
@@ -69,6 +72,12 @@ public class ConsumerController {
 	{
 		return cservice.getAllConsumers();
 	}
+	
+	@GetMapping("/user/{id}")
+	 public ResponseEntity<Consumer> getUser(@PathVariable User id) {
+	     Consumer consumer = cservice.findByUser(id);
+	     return ResponseEntity.ok(consumer);
+	 }
 
 	
 }

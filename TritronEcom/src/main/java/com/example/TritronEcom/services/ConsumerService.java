@@ -31,4 +31,6 @@ public class ConsumerService {
 	 public Consumer findByUser(User user) {
 	        return crepo.findByUser(user);
 	    }
+	 
+	 
 }
