@@ -42,7 +42,7 @@ export default function SellerHome() {
                     </ul>
                 </div>
             </nav>
-            <h1>Seller Home</h1>
+            
             <Outlet/>
         </div>
     )

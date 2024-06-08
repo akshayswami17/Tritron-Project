@@ -40,6 +40,7 @@ import PaymentProcess from './components/PaymentProcess';
 import PaymentOptions from './components/PaymentOptions';
 import PhonePePayment from './components/PhonePePayment';
 import ShowUsersData from './components/ShowUsersData';
+import ShowUsersDataBySelectBox from './components/ShowUsersDataBySelectBox';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -70,6 +71,7 @@ function App() {
           <Route path="ViewUsers" element={<ViewUsers />} />
           <Route path="Viewsellers" element={<SellersData />} />
           <Route path="ViewConsumer" element={<ConsumerData />} />
+          <Route path="showusersdatabyselectBox" element={<ShowUsersDataBySelectBox />} />
           
         </Route>
 
@@ -90,7 +92,7 @@ function App() {
         </Route>
 
         <Route path="/seller_home" element={<SellerHome />}>
-        <Route path="updateprofile" element={<NotFound />} />
+        <Route path="updateprofile" element={<UpdateProfile />} />
           <Route path="AddProductPage" element={<AddProduct />} />
           <Route path="viewFeedback" element={<FeedbackData />} />
           <Route path="updatediscountedprice" element={<NotFound />} />
