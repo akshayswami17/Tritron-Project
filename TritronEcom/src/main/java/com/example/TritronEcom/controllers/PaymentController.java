@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.TritronEcom.entities.Payment;
+import com.example.TritronEcom.entities.PaymentDTO;
 import com.example.TritronEcom.services.PaymentService;
 
 @RestController
@@ -20,7 +21,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/savePayment")
-    public Payment savePayment(@RequestBody Payment payment, @RequestParam Integer userId) {
-        return paymentService.savePayment(payment, userId);
+    public Payment savePayment(@RequestBody PaymentDTO paymentDTO) {
+        return paymentService.savePayment(paymentDTO);
     }
 }

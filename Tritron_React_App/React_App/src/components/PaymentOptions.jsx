@@ -9,6 +9,11 @@ import image4 from '../components/Images/cashondelivery.png';
 const PaymentOptions = () => {
   const navigate = useNavigate();
 
+  const handlePaymentMethodSelect = (method, path) => {
+    localStorage.setItem('paymentMethod', method);
+    navigate(path);
+  };
+
   const handleBack = () => {
     navigate(-1); // Navigate back to the previous page
   };
@@ -17,7 +22,7 @@ const PaymentOptions = () => {
     <div className="container-payment-options">
       <h2 className="heading-payment-options">Choose Payment Method</h2>
       <div className="payment-methods">
-        <div className="payment-method" onClick={() => navigate('/phonepepayment')}>
+        <div className="payment-method" onClick={() => handlePaymentMethodSelect('PhonePe', '/phonepepayment')}>
           <img src={image1} alt="PhonePe" className="payment-image" />
           <p>PhonePe</p>
         </div>

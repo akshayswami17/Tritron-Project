@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../CSS Files/PhonePePayment.css'; // Make sure to create and style this CSS file
@@ -10,7 +10,18 @@ const PhonePePayment = () => {
     name: '',
     phone: '',
     amount: '',
+    paymentMethod: '',
   });
+
+  useEffect(() => {
+    const paymentMethod = localStorage.getItem('paymentMethod');
+    if (paymentMethod) {
+      setFormData((prevData) => ({
+        ...prevData,
+        paymentMethod,
+      }));
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +89,16 @@ const PhonePePayment = () => {
             value={formData.amount}
             onChange={handleChange}
             required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="paymentMethod">Payment Method</label>
+          <input
+            type="text"
+            id="paymentMethod"
+            name="paymentMethod"
+            value={formData.paymentMethod}
+            readOnly
           />
         </div>
         <button type="submit" className="btn btn-primary">Pay Now</button>
