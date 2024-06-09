@@ -10,4 +10,5 @@ import com.example.TritronEcom.entities.Seller;
 @Repository
 public interface SellerRepository extends JpaRepository<Seller, Integer> {
 
+//	Seller findByUserId(Integer userId);
 }

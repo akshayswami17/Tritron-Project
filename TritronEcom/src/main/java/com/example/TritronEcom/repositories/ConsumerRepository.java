@@ -12,4 +12,5 @@ import com.example.TritronEcom.entities.User;
 public interface ConsumerRepository extends JpaRepository<Consumer, Integer> {
 
 	Consumer findByUser(User user);
+//	Consumer findByUserId(Integer userId);
 }

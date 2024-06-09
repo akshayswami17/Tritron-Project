@@ -73,11 +73,11 @@ public class ConsumerController {
 		return cservice.getAllConsumers();
 	}
 	
-	@GetMapping("/user/{id}")
-	 public ResponseEntity<Consumer> getUser(@PathVariable User id) {
-	     Consumer consumer = cservice.findByUser(id);
-	     return ResponseEntity.ok(consumer);
-	 }
+//	@GetMapping("/user/{id}")
+//	 public ResponseEntity<Consumer> getUser(@PathVariable User id) {
+//	     Consumer consumer = cservice.findByUser(id);
+//	     return ResponseEntity.ok(consumer);
+//	 }
 
 	
 }

@@ -2,11 +2,14 @@ package com.example.TritronEcom.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.TritronEcom.entities.Seller;
 import com.example.TritronEcom.entities.User;
+import com.example.TritronEcom.repositories.SellerRepository;
 import com.example.TritronEcom.repositories.UserRepository;
 
 @Service
@@ -14,6 +17,7 @@ public class UserService {
 
     @Autowired
     private UserRepository urepo;
+//    private SellerRepository sellerRepository;
 
     public UserService(UserRepository userRepository) {
         this.urepo = userRepository;
@@ -48,7 +52,22 @@ public class UserService {
         });
     }
 
-    public User findByUsername(String username) {
-        return urepo.findByUsername(username);
-    }
+//    public User findByUsername(String username) {
+//        return urepo.findByUsername(username);
+//    }
+    
+    
+//    public Object getUserData(Integer userId) {
+//        Consumer consumer = urepo.findByUserId(userId);
+//        if (consumer != null) {
+//            return consumer;
+//        }
+//
+//        Seller seller = sellerRepository.findByUserId(userId);
+//        if (seller != null) {
+//            return seller;
+//        }
+//
+//        return null; // or throw an exception
+//    }
 }
