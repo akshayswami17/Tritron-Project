@@ -73,7 +73,7 @@ const ShowProducts = () => {
                     <p className="card-text"><strong>Base Price:</strong> {model.basePrice}</p>
                     <p className="card-text"><strong>Brand:</strong> {model.brand ? model.brand.brand_name : 'ERROR'}</p>
                     <p className="card-text"><strong>Description:</strong> {model.description}</p>
-                    <button className="btn btn-outline-primary" onClick={() => handleShow(model.modelId)}>
+                    <button className="btn-showproducts btn-outline-primary" onClick={() => handleShow(model.modelId)}>
                       Buy now
                     </button>
                   </div>

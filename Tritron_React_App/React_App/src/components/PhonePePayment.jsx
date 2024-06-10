@@ -35,9 +35,10 @@ const PhonePePayment = () => {
     e.preventDefault();
     console.log('Payment Details:', formData);
     axios.post("http://localhost:8080/api/savePayment", formData)
-      .then(response => {
-        console.log('Payment saved successfully:', response.data);
-      })
+    .then(response => {
+      console.log('Payment saved successfully:', response.data);
+      navigate('/paymentsuccess'); // Navigate to the PaymentSuccess component
+    })
       .catch(error => {
         console.error('Error saving payment:', error);
       });
@@ -100,7 +101,7 @@ const PhonePePayment = () => {
             name="paymentMethod"
             value={formData.paymentMethod}
             onChange={handleChange}
-            readOnly
+            // readOnly
           />
         </div>
         <button type="submit" className="btn btn-outline-primary">Pay</button>

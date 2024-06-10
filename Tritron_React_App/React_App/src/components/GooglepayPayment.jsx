@@ -35,8 +35,9 @@ const GooglepayPayment = () => {
     e.preventDefault();
     console.log('Payment Details:', formData);
     axios.post("http://localhost:8080/api/savePayment", formData)
-      .then(response => {
+    .then(response => {
         console.log('Payment saved successfully:', response.data);
+        navigate('/paymentsuccess'); // Navigate to the PaymentSuccess component
       })
       .catch(error => {
         console.error('Error saving payment:', error);

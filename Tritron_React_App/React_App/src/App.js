@@ -42,6 +42,8 @@ import PhonePePayment from './components/PhonePePayment';
 import ShowUsersData from './components/ShowUsersData';
 import ShowUsersDataBySelectBox from './components/ShowUsersDataBySelectBox';
 import GooglepayPayment from './components/GooglepayPayment';
+import PaymentSuccess from './components/PaymentSuccess';
+import SuccessSpinner from './components/SuccessSpinner';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -60,6 +62,8 @@ function App() {
         <Route path='/consumerreg' element={<ConsumerReg />} />
         <Route path="/phonepepayment" element={<PhonePePayment />} />
         <Route path="/googlepepayment" element={<GooglepayPayment />} />
+        <Route path="/paymentsuccess" element={<PaymentSuccess />} />
+        <Route path="/success" element={<SuccessSpinner />} />
         
         <Route path="/user_data" element={<ShowUsersData />} />
         

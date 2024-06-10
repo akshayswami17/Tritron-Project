@@ -1,0 +1,46 @@
+/* PaymentSuccess.css */
+
+.container-payment-success {
+    text-align: center;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    max-width: 600px;
+    margin: 100px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .heading-payment-success {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .success-message p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
