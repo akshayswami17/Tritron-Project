@@ -22,14 +22,14 @@ const PaymentOptions = () => {
     <div className="container-payment-options">
       <h2 className="heading-payment-options">Choose Payment Method</h2>
       <div className="payment-methods">
-        <div className="payment-method" onClick={() => handlePaymentMethodSelect('PhonePe', '/phonepepayment')}>
+        <div className="payment-method" onClick={() => handlePaymentMethodSelect('PhonePay', '/phonepepayment')}>
           <img src={image1} alt="PhonePe" className="payment-image" />
           <p>PhonePe</p>
         </div>
-        <div className="payment-method">
-          <a href="https://pay.google.com/" target="_blank" rel="noopener noreferrer">
+        <div className="payment-method" onClick={() => handlePaymentMethodSelect('GooglePay', '/googlepepayment')}>
+          
             <img src={image2} alt="Google Pay" className="payment-image" />
-          </a>
+          
           <p>Google Pay</p>
         </div>
         <div className="payment-method">

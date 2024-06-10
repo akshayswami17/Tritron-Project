@@ -41,6 +41,7 @@ import PaymentOptions from './components/PaymentOptions';
 import PhonePePayment from './components/PhonePePayment';
 import ShowUsersData from './components/ShowUsersData';
 import ShowUsersDataBySelectBox from './components/ShowUsersDataBySelectBox';
+import GooglepayPayment from './components/GooglepayPayment';
 
 function App() {
   const mystate = useSelector(state => state.logged);
@@ -58,6 +59,8 @@ function App() {
         <Route path='/sellerreg' element={<SellerReg />} />
         <Route path='/consumerreg' element={<ConsumerReg />} />
         <Route path="/phonepepayment" element={<PhonePePayment />} />
+        <Route path="/googlepepayment" element={<GooglepayPayment />} />
+        
         <Route path="/user_data" element={<ShowUsersData />} />
         
         <Route path="/logout" element={<LoginComp />} />
