@@ -5,12 +5,15 @@ public class PaymentDTO {
     private String phone;
     private String amount;
     private Integer userId;
-	public PaymentDTO(String name, String phone, String amount, Integer userId) {
+    private String paymentMethod;
+	public PaymentDTO(String name, String phone, String amount, Integer userId,String paymentMethod) {
 		super();
 		this.name = name;
 		this.phone = phone;
 		this.amount = amount;
 		this.userId = userId;
+		this.paymentMethod = paymentMethod;
+		
 	}
 	public PaymentDTO() {
 		super();
@@ -38,6 +41,10 @@ public class PaymentDTO {
 	}
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+	public Object getPaymentMethod() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

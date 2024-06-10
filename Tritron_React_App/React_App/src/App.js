@@ -49,9 +49,9 @@ function App() {
     <div className="App">
       <div style={{ display: mystate.loggedIn ? "none" : "block" }}>
         <NavBar />
-        {/* <AnimatedHeading /> */}
+        {/* <AnimatedHeading />
 
-        {/* <HomeSlideShow /> */}
+        <HomeSlideShow /> */}
       </div>
       <Routes>
         <Route path='/login' element={<LoginComp />} />

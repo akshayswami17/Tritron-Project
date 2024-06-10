@@ -20,6 +20,7 @@ public class Payment {
  private String name;
  private String phone;
  private String amount;
+ private String paymentMethod;
 
  @ManyToOne
  @JoinColumn(name = "user_id")
@@ -31,12 +32,13 @@ public Payment() {
 	super();
 }
 
-public Payment(String name, String phone, String amount, User user) {
+public Payment(String name, String phone, String amount, User user ,String paymentMethod) {
 	super();
 	this.name = name;
 	this.phone = phone;
 	this.amount = amount;
 	this.user = user;
+	this.paymentMethod = paymentMethod;
 }
 
 public Integer getId() {
@@ -77,6 +79,11 @@ public User getUser() {
 
 public void setUser(User user) {
 	this.user = user;
+}
+
+public void setPaymentMethod(Object paymentMethod2) {
+	// TODO Auto-generated method stub
+	
 }
 
  // Getters and Setter

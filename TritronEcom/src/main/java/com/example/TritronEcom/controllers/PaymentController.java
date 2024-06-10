@@ -22,6 +22,7 @@ public class PaymentController {
 
     @PostMapping("/savePayment")
     public Payment savePayment(@RequestBody PaymentDTO paymentDTO) {
+        System.out.println("Received Payment Details: " + paymentDTO);
         return paymentService.savePayment(paymentDTO);
     }
 }

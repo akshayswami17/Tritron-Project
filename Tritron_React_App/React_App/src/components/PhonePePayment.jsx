@@ -44,6 +44,7 @@ const PhonePePayment = () => {
   };
 
   return (
+    <div className="bg-phonepe-payment">
     <div className="container-phonepe-payment">
       <h2 className="heading-phonepe-payment">PhonePe Payment</h2>
       <form className="payment-form" onSubmit={handleSubmit}>
@@ -98,12 +99,14 @@ const PhonePePayment = () => {
             id="paymentMethod"
             name="paymentMethod"
             value={formData.paymentMethod}
+            onChange={handleChange}
             readOnly
           />
         </div>
-        <button type="submit" className="btn btn-primary">Pay Now</button>
+        <button type="submit" className="btn btn-outline-primary">Pay</button>
         <button type="button" className="btn btn-secondary" onClick={() => navigate(-1)}>Back</button>
       </form>
+    </div>
     </div>
   );
 };

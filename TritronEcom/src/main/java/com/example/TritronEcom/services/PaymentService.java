@@ -23,6 +23,7 @@ public class PaymentService {
             payment.setName(paymentDTO.getName());
             payment.setPhone(paymentDTO.getPhone());
             payment.setAmount(paymentDTO.getAmount());
+            payment.setPaymentMethod(paymentDTO.getPaymentMethod());
             payment.setUser(user);
             return paymentRepository.save(payment);
         }).orElseThrow(() -> new RuntimeException("User not found with id " + paymentDTO.getUserId()));
