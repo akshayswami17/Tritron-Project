@@ -5,13 +5,27 @@
   background-size:auto;
 
 }
+.bg-google-payment{
+  background-image: url('../components/Images/bg-googlepay.png'); 
+  background-size:auto;
+  
+}
+.container-googlepay-payment
+{
+  
+  padding: 20px;
+  border-radius: 10px;
+  color: #fe0a0a; 
+  max-width: 500px;
+  margin: 0 auto;
+}
 .container-phonepe-payment {
  
   /* background-position: center; */
   background-repeat: no-repeat;
   padding: 20px;
   border-radius: 10px;
-  color: #fff; 
+  color: #f7f2f2; 
   max-width: 500px;
   margin: 0 auto;
 }
