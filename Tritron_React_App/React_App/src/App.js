@@ -108,6 +108,7 @@ function App() {
 
 
         </Route>
+        <Route path='/' element={<App />} />
 
       </Routes>
     </div>

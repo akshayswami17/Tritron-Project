@@ -3,7 +3,7 @@ import '../CSS Files/AddProduct.css';
 
 const AddProduct = () => {
     const init = {
-        model_id: "",
+        
         discounted_price: "",
         seller_id: "",
         base_price: "",
@@ -32,10 +32,10 @@ const AddProduct = () => {
 
     useEffect(() => {
         // Fetch models
-        fetch('http://localhost:8080/getAllModels')
-            .then(response => response.json())
-            .then(data => setModels(data))
-            .catch(error => console.error('Error fetching models:', error));
+        // fetch('http://localhost:8080/getAllModels')
+        //     .then(response => response.json())
+        //     .then(data => setModels(data))
+        //     .catch(error => console.error('Error fetching models:', error));
 
         // Fetch sellers
         fetch('http://localhost:8080/getAllSellers')
@@ -46,7 +46,7 @@ const AddProduct = () => {
 
     const sendData = (e) => {
         e.preventDefault();
-        const requiredFields = ['model_id', 'discounted_price', 'seller_id', 'base_price', 'brand_name', 'category', 'description', 'model_name'];
+        const requiredFields = ['discounted_price', 'seller_id', 'base_price', 'brand_name', 'category', 'description', 'model_name'];
         const newErrorMsgs = { ...errorMsgs };
 
         requiredFields.forEach(field => {
@@ -57,7 +57,7 @@ const AddProduct = () => {
 
         if (requiredFields.some(field => !product[field])) return;
 
-        fetch("http://localhost:8080/addProduct", {
+        fetch("http://localhost:8080/addModel", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -79,20 +79,7 @@ const AddProduct = () => {
         <div className="product-container">
             <h1 className="product-heading">Add Product</h1>
             <form>
-                <div className="form-group">
-                    <label htmlFor="model_id" className="form-label">Model:</label>
-                    <select className="form-control" id="model_id" name="model_id"
-                        value={product.model_id}
-                        onChange={(e) => dispatch({ type: 'update', fld: 'model_id', val: e.target.value })}
-                        required
-                    >
-                        <option value="">Select Model</option>
-                        {models.map(model => (
-                            <option key={model.model_id} value={model.model_id}>{model.model_name}</option>
-                        ))}
-                    </select>
-                    <div className="error-msg" style={{ color: 'red' }}>{errorMsgs.model_id}</div>
-                </div>
+            
                 <div className="form-group">
                     <label htmlFor="discounted_price" className="form-label">Discounted Price:</label>
                     <input type="number" className="form-control" id="discounted_price" name="discounted_price"
