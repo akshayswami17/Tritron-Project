@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.09c62041.css",
+    "main.js": "/static/js/main.c050316a.js",
+    "static/js/453.fff5dc7e.chunk.js": "/static/js/453.fff5dc7e.chunk.js",
+    "static/media/online4.jpg": "/static/media/online4.5775cd72f43bd914a7c3.jpg",
+    "static/media/VU_PC._CB582778228_.jpg": "/static/media/VU_PC._CB582778228_.6747193e0472bbeb895d.jpg",
+    "static/media/online5.jpg": "/static/media/online5.b45072ae027fd53b8de2.jpg",
+    "static/media/online6.jpg": "/static/media/online6.b45072ae027fd53b8de2.jpg",
+    "static/media/online1.jpg": "/static/media/online1.922e5a84ac8d8c26cf4b.jpg",
+    "static/media/online2.jpg": "/static/media/online2.466ec1bccf870495d4c0.jpg",
+    "static/media/online3.jpg": "/static/media/online3.301fd3f6b5c9f822e430.jpg",
+    "static/media/logo1.jpg": "/static/media/logo1.1d443645e60c0274c364.jpg",
+    "static/media/phonepaybgimage.webp": "/static/media/phonepaybgimage.2ab330fb616fe8f15e97.webp",
+    "index.html": "/index.html",
+    "main.09c62041.css.map": "/static/css/main.09c62041.css.map",
+    "main.c050316a.js.map": "/static/js/main.c050316a.js.map",
+    "453.fff5dc7e.chunk.js.map": "/static/js/453.fff5dc7e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09c62041.css",
+    "static/js/main.c050316a.js"
+  ]
+}

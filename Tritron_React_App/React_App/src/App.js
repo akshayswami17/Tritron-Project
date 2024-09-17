@@ -50,6 +50,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <div style={{ display: mystate.loggedIn ? "none" : "block" }}>
         <NavBar />
         {/* <AnimatedHeading />
@@ -108,7 +109,7 @@ function App() {
 
 
         </Route>
-        <Route path='/' element={<App />} />
+        {/* <Route path='/' element={<App />} /> dont use this because its create recuression. */}
 
       </Routes>
     </div>
